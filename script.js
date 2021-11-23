@@ -17,8 +17,9 @@ const calculateProfitLoss = (initialPrice, quantity, currentPrice) => {
 }
 
 const clickHandler = () => {
-    if(initialPrice.value && quantity.value && currentPrice.value) {
+    if((initialPrice.value && quantity.value && currentPrice.value) && (Number(initialPrice.value) > 0 && Number(quantity.value) > 0 && Number(currentPrice.value) > 0)) {
         console.log(initialPrice.value, quantity.value, currentPrice.value)
+        
         const [percentage, bool] = calculateProfitLoss(Number(initialPrice.value), Number(quantity.value), Number(currentPrice.value));
 
         console.log(bool)
